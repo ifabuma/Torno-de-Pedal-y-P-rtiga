@@ -17,6 +17,7 @@ model-viewer {
   width: 100%;
   height: 90%;
   background-color: #ffffff;
+  z-index: 900;
 }
 
 
@@ -106,4 +107,63 @@ model-viewer[ar-status="session-started"] > #ar-prompt {
 
 model-viewer > #ar-prompt > img {
   animation: circle 4s linear infinite;
+}
+
+.menu{
+  position: absolute;
+  margin-top: 3%;
+  right: 15%;
+  width: 0;
+  transform: translate(-50%, 0);
+  z-index:1000;
+}
+
+.toggle{
+  display: none;
+}
+
+.toggle + .menu-icon{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  transform: translate(-50%, -50%), scale(1);
+  display: block;
+  background: #4285f4;
+  text-align: center;
+  transition: all .8s;
+}
+
+.menu-icon box-icon{
+  margin-top: 13px;
+  margin-left: 0px;
+  z-index: 999;
+}
+
+.menu-icon:hover{
+  box-shadow: 1px 1px 2px 1px #b4c4f0;
+}
+
+a{
+  opacity: 0;
+  position: relative;
+  margin-top: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  transform: translate(-50%, -50%), scale(1);
+  display: block;
+  background: #4285f4;
+  text-align: center;
+  transition: all .8s;
+}
+
+a box-icon{
+  margin-top: 13px;
+  
+}
+
+.toggle:checked ~ a{
+  opacity: 1;
 }
